@@ -37,26 +37,32 @@ df=pd.DataFrame(data.data,columns=data.feature_names)
 df['target']=data.target
 print(df.head())
 ~~~
-![Screenshot 2024-09-04 141320](https://github.com/user-attachments/assets/cf0a7cb3-f086-4f9c-8360-ffbcdf402808)
+![364298081-cf0a7cb3-f086-4f9c-8360-ffbcdf402808](https://github.com/user-attachments/assets/b362db54-16e5-4e73-8cd7-f14990fe7891)
+
+
 ~~~python
 df.info()
 ~~~
-![Screenshot 2024-09-04 141326](https://github.com/user-attachments/assets/8acf2aaf-8108-4fe8-bc05-2d79d2ffe7f9)
+![364298410-8acf2aaf-8108-4fe8-bc05-2d79d2ffe7f9](https://github.com/user-attachments/assets/af782379-e628-4ebe-874b-37988bdfdc1f)
+
 ~~~python
 X=df.drop(columns=['AveOccup','target'])
 X.info()
 ~~~
-![Screenshot 2024-09-04 141334](https://github.com/user-attachments/assets/a2305206-cfea-4d68-b0ae-576259660220)
+![364298746-a2305206-cfea-4d68-b0ae-576259660220](https://github.com/user-attachments/assets/85a38715-1b33-4afa-8fb3-ede9d43a7224)
+
 ~~~python
 Y=df[['AveOccup','target']]
 Y.info()
 ~~~
-![Screenshot 2024-09-04 141342](https://github.com/user-attachments/assets/226d87cd-cf5b-4137-bdaf-8ae683d9f936)
+![364299224-226d87cd-cf5b-4137-bdaf-8ae683d9f936](https://github.com/user-attachments/assets/c1a08c8b-6d42-466b-9ae7-13ffccfb6882)
+
 ~~~python
 X_train,X_test,Y_train,Y_test=train_test_split(X,Y,test_size=0.2,random_state=42)
 X.head()
 ~~~
-![Screenshot 2024-09-04 141402](https://github.com/user-attachments/assets/8c472cc7-88e2-434a-8932-cb2eaa258199)
+![364299527-8c472cc7-88e2-434a-8932-cb2eaa258199](https://github.com/user-attachments/assets/d03b8fad-f433-472b-a4cb-ec6b7b64bd22)
+
 ~~~python
 scaler_X=StandardScaler()
 scaler_Y=StandardScaler()
@@ -66,7 +72,8 @@ Y_train=scaler_Y.fit_transform(Y_train)
 Y_test=scaler_Y.transform(Y_test)
 print(X_train)
 ~~~
-![Screenshot 2024-09-04 141409](https://github.com/user-attachments/assets/74067f93-ba6f-4a57-bb0e-aef7c777cf1d)
+![364299952-74067f93-ba6f-4a57-bb0e-aef7c777cf1d](https://github.com/user-attachments/assets/1d3ef95f-afbe-4c90-8a69-7483ce295cea)
+
 ~~~python
 sgd=SGDRegressor(max_iter=1000,tol=1e-3)
 multi_output_sgd=MultiOutputRegressor(sgd)
@@ -80,7 +87,8 @@ print("\nPredictions:\n", Y_pred[:5])
 ~~~
 
 ## Output:
-![Screenshot 2024-09-04 141416](https://github.com/user-attachments/assets/00db5521-9379-4fc9-820d-e491fab3ac68)
+![364300532-00db5521-9379-4fc9-820d-e491fab3ac68](https://github.com/user-attachments/assets/5e99735c-08d6-48fb-8224-25aacc055cbe)
+
 
 
 
